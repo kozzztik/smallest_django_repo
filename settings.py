@@ -90,3 +90,10 @@ class UrlsPy:
 
 ROOT_URLCONF = UrlsPy()
 
+# small livehack for demo-app, see readme.
+def get_application():
+    import django
+    from django.core.handlers.wsgi import WSGIHandler
+    from django.contrib.staticfiles.handlers import StaticFilesHandler
+    django.setup(set_prefix=False)
+    return StaticFilesHandler(WSGIHandler())
