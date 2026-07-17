@@ -83,6 +83,8 @@ docker run --rm -v ./data:/opt/data -p 127.0.0.1:8000:8000 smallest_django gunic
 from django import urls
 from django.http import HttpResponse
 
+ALLOWED_HOSTS = ['127.0.0.1']
+
 def home(_):
     return HttpResponse('Hello world from mini Django!')
 
